@@ -20,6 +20,9 @@
         .bg-secondary { background-color: var(--color-secondary); }
         .text-accent { color: var(--color-accent); }
         .bg-accent { background-color: var(--color-accent); }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--color-secondary);
@@ -108,6 +111,37 @@
                 inset 0 1px 0 rgba(255, 255, 255, 0.7); /* Stronger highlight */
         }
         
+        /* --- Back to Top Button --- */
+        #toTopBtn {
+            display: none; /* Hidden by default */
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: var(--color-primary);
+            color: white;
+            cursor: pointer;
+            padding: 12px 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transform: translateY(10px);
+        }
+
+        #toTopBtn.show {
+            display: block;
+            opacity: 0.8;
+            transform: translateY(0);
+        }
+
+        #toTopBtn:hover {
+            opacity: 1;
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+        }
     </style>
 </head>
 <body class="min-h-screen p-4 sm:p-8">
@@ -143,10 +177,10 @@
             <section class="bg-secondary p-6 rounded-xl border-t-8 border-primary shadow-lg">
                 <h2 class="text-3xl font-bold mb-4 text-primary text-3d-dark">A Message from the Leadership</h2>
                 <p class="text-gray-700 leading-relaxed mb-4">
-                    As the **founders of Drip Cafe**, we extend a warm and enthusiastic welcome to you! Our vision was to create more than just a cafe—it's a **community** built on a cozy, welcoming vibe and the promise of opportunity. We are dedicated to providing the **best experience**, whether you are enjoying a latte or building a career here.
+                    As the <b>founders of Drip Cafe</b>, we extend a warm and enthusiastic welcome to you! Our vision was to create more than just a cafe it's a <b>community</b> built on a cozy, welcoming vibe and the promise of opportunity. We are dedicated to providing the <b>best experience</b>, whether you are enjoying a latte or building a career here.
                 </p>
                 <p class="text-gray-700 leading-relaxed">
-                    Step inside and feel the atmosphere we've crafted. Our goal is always to ensure a **smooth, enjoyable, and engaging experience** for everyone across both our **Roblox server and Discord channel.**
+                    Step inside and feel the atmosphere we've crafted. Our goal is always to ensure a <b>smooth, enjoyable, and engaging experience</b> for everyone across both our <b>Roblox server and Discord channel.</b>
                 </p>
             </section>
             
@@ -154,7 +188,7 @@
             <section class="bg-gray-100 p-6 rounded-xl shadow-inner border-l-8 border-primary">
                 <h2 class="text-3xl font-bold mb-4 text-primary text-3d-dark">Super Executive Dedication: Leading with Purpose</h2>
                 <p class="text-gray-700 leading-relaxed">
-                    Our success is built on dedication. Our **Super Executives** are constantly working effortlessly, overseeing **crucial major departments** and making sure everything runs **smoothly and critically**. This role is a position of **serious responsibility**, demanding the utmost commitment and diligence, as they are the **backbone of our operation** and ensure the strategic vision is carried out.
+                    Our success is built on dedication. Our <b>Super Executives</b> are constantly working effortlessly, overseeing <b>crucial major departments</b> and making sure everything runs <b>smoothly and critically</b>. This role is a position of <b>serious responsibility</b>, demanding the utmost commitment and diligence, as they are the <b>backbone of our operation</b> and ensure the strategic vision is carried out.
                 </p>
             </section>
 
@@ -162,33 +196,33 @@
             <section class="space-y-4">
                 <h2 class="text-3xl font-bold text-primary border-b-2 border-primary pb-2 text-3d-dark">Key Operational Departments</h2>
                 <p class="text-gray-700 leading-relaxed">
-                    The Super Executive team oversees several **crucial departments** (Operations, Human Resources, Public Relations, Server Moderation, and Support), ensuring specialized attention is given to every aspect of the Drip Cafe experience:
+                    The Super Executive team oversees several <b>crucial departments</b> (Operations, Human Resources, Public Relations, Server Moderation, and Support), ensuring specialized attention is given to every aspect of the Drip Cafe experience:
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <!-- Department 1: Operations -->
                     <div class="p-4 bg-primary/5 rounded-xl border-l-4 border-primary md:col-span-1">
                         <h3 class="font-bold text-lg text-primary text-3d-dark">Operations Department (OD)</h3>
-                        <p class="text-xs mt-1 text-gray-500">Manages the **day-to-day running** of the cafe and server. Focuses on **efficiency, resource management**, and ensuring all standard procedures are followed across the LR, MR, and HR teams.</p>
+                        <p class="text-xs mt-1 text-gray-500">Manages the <b>day-to-day running</b> of the cafe and server. Focuses on <b>efficiency, resource management</b>, and ensuring all standard procedures are followed across the LR, MR, and HR teams.</p>
                     </div>
                     <!-- Department 2: Human Resources (Permanent) -->
                     <div class="p-4 bg-primary/5 rounded-xl border-l-4 border-primary md:col-span-1">
                         <h3 class="font-bold text-lg text-primary text-3d-dark">Human Resources (HR)</h3>
-                        <p class="text-xs mt-1 text-gray-500">Responsible for **staffing, training, and policy enforcement**. Handles promotions, disciplinary actions, and ensuring a **positive, professional working environment**. **A permanent, crucial department.**</p>
+                        <p class="text-xs mt-1 text-gray-500">Responsible for <b>staffing, training, and policy enforcement</b>. Handles promotions, disciplinary actions, and ensuring a <b>positive, professional working environment</b>. <b>A permanent, crucial department.</b></p>
                     </div>
                     <!-- Department 3: Public Relations (Permanent) -->
                     <div class="p-4 bg-primary/5 rounded-xl border-l-4 border-primary md:col-span-1">
                         <h3 class="font-bold text-lg text-primary text-3d-dark">Public Relations (PR)</h3>
-                        <p class="text-xs mt-1 text-gray-500">Focuses on **community engagement, partnerships, and brand image**. Manages official communications, events, and ensures the Drip Cafe maintains its **welcoming and professional reputation**. **A permanent, crucial department.**</p>
+                        <p class="text-xs mt-1 text-gray-500">Focuses on <b>community engagement, partnerships, and brand image</b>. Manages official communications, events, and ensures the Drip Cafe maintains its <b>welcoming and professional reputation</b>. <b>A permanent, crucial department.</b></p>
                     </div>
                     <!-- Department 4: Server Moderation (SM) (Permanent) -->
                     <div class="p-4 bg-primary/5 rounded-xl border-l-4 border-primary md:col-span-1">
                         <h3 class="font-bold text-lg text-primary text-3d-dark">Server Moderation (SM)</h3>
-                        <p class="text-xs mt-1 text-gray-500">Manages **in-game conduct** and **rule enforcement** to ensure a safe and secure environment. Focuses on handling exploiters, rule-breakers, and providing quick resolutions to disruptive behavior. **A permanent, crucial team.**</p>
+                        <p class="text-xs mt-1 text-gray-500">Manages <b>in-game conduct</b> and <b>rule enforcement</b> to ensure a safe and secure environment. Focuses on handling exploiters, rule-breakers, and providing quick resolutions to disruptive behavior. <b>A permanent, crucial team.</b></p>
                     </div>
                     <!-- Department 5: Support Team (ST) -->
                     <div class="p-4 bg-primary/5 rounded-xl border-l-4 border-primary md:col-span-1">
                         <h3 class="font-bold text-lg text-primary text-3d-dark">Support Team (ST)</h3>
-                        <p class="text-xs mt-1 text-gray-500">Handles **external communications, ticketing, appeals, and general inquiries** via Discord. Provides detailed, timely support to the community and staff on policies and issues.</p>
+                        <p class="text-xs mt-1 text-gray-500">Handles <b>external and internal communications, ticketing and general inquiries</b> via Discord. Provides detailed, timely support to the community and staff on policies and issues.</p>
                     </div>
                 </div>
             </section>
@@ -197,18 +231,18 @@
             <section class="space-y-6 bg-primary/5 p-6 rounded-xl border-t-8 border-primary shadow-inner">
                 <h2 class="text-3xl font-bold text-primary pb-2 text-3d-dark">Official Rules and Policies</h2>
                 <p class="text-gray-700 leading-relaxed">
-                    Adherence to these rules is **mandatory** for all members, staff, and guests within Drip Cafe's game and community platforms. Violations will result in warnings, kicks, bans, or rank removal, determined by the severity of the offense.
+                    Adherence to these rules is <b>mandatory</b> for all members, staff, and guests within Drip Cafe's game and community platforms. Violations will result in warnings, kicks, bans, or rank removal, determined by the severity of the offense.
                 </p>
 
                 <!-- General Rules -->
                 <div class="bg-white p-5 rounded-lg shadow-md border-l-4 border-accent">
                     <h3 class="text-xl font-bold mb-3 text-accent text-3d-dark">General Community Rules (All Users)</h3>
                     <ul class="rules-list text-gray-700">
-                        <li>**Respect and Conduct:** Always maintain a positive, welcoming, and respectful attitude towards all users and staff. Bullying, harassment, or derogatory language is strictly forbidden.</li>
-                        <li>**ROBLOX ToS:** All users must adhere strictly to the **Roblox Terms of Service** and Community Guidelines.</li>
-                        <li>**No Exploiting or Hacking:** Using any third-party software, exploits, or hacks to gain an unfair advantage or disrupt the game is an automatic, permanent ban.</li>
-                        <li>**Spam and Trolling:** Do not spam chat, advertise other groups, or purposefully troll or bait staff/other users.</li>
-                        <li>**Listening to Staff:** High Ranks (HRs) and above have authority; please follow their instructions promptly.</li>
+                        <li><b>Respect and Conduct:</b> Always maintain a positive, welcoming, and respectful attitude towards all users and staff. Bullying, harassment, or derogatory language is strictly forbidden.</li>
+                        <li><b>ROBLOX ToS:</b> All users must adhere strictly to the <b>Roblox Terms of Service</b> and Community Guidelines.</li>
+                        <li><b>No Exploiting or Hacking:</b> Using any third-party software, exploits, or hacks to gain an unfair advantage or disrupt the game is an automatic, permanent ban.</li>
+                        <li><b>Spam and Trolling:</b> Do not spam chat, advertise other groups, or purposefully troll or bait staff/other users.</li>
+                        <li><b>Listening to Staff:</b> High Ranks (HRs) and above have authority; please follow their instructions promptly.</li>
                     </ul>
                 </div>
 
@@ -216,11 +250,11 @@
                 <div class="bg-white p-5 rounded-lg shadow-md border-l-4 border-primary">
                     <h3 class="text-xl font-bold mb-3 text-primary text-3d-dark">Staff Conduct and Expectations (LR to HR)</h3>
                     <ul class="rules-list text-gray-700">
-                        <li>**Professionalism:** Always use **proper grammar** when serving customers (LR/MR) and when communicating with fellow staff. Maintain a professional demeanor.</li>
-                        <li>**No Begging:** Do not beg, spam, or constantly ask for promotions, ranks, or admin powers from any HR or Executive. Promotions are earned through merit.</li>
-                        <li>**Activity Requirement:** All staff must meet the minimum activity requirements set by the Human Resources (HR) Department to maintain their rank. Consistent inactivity will lead to demotion or removal.</li>
-                        <li>**Admin Abuse:** Staff with administrative tools are forbidden from using them for personal gain, targeting individuals, or trolling. Misuse of tools results in immediate termination.</li>
-                        <li>**Honesty:** Always be honest in your reports and communication. Dishonesty undermines team trust and is a serious breach of policy.</li>
+                        <li><b>Professionalism:</b> Always use <b>proper grammar</b> when serving customers (LR/MR) and when communicating with fellow staff. Maintain a professional demeanor.</li>
+                        <li><b>No Begging:</b> Do not beg, spam, or constantly ask for promotions, ranks, or admin powers from any HR or Executive. Promotions are earned through merit.</li>
+                        <li><b>Activity Requirement:</b> All staff must meet the minimum activity requirements set by the Human Resources (HR) Department to maintain their rank. Consistent inactivity will lead to demotion or removal.</li>
+                        <li><b>Admin Abuse:</b> Staff with administrative tools are forbidden from using them for personal gain, targeting individuals, or trolling. Misuse of tools results in immediate termination.</li>
+                        <li><b>Honesty:</b> Always be honest in your reports and communication. Dishonesty undermines team trust and is a serious breach of policy.</li>
                     </ul>
                 </div>
 
@@ -228,10 +262,10 @@
                 <div class="bg-red-50 p-5 rounded-lg shadow-md border-l-4 border-red-500">
                     <h3 class="text-xl font-bold mb-3 text-red-700 text-3d-dark">🚨 Strict Anti-Exploitation Policy</h3>
                     <p class="text-gray-700">
-                        Drip Cafe operates with a **zero-tolerance policy** towards any form of exploitation, hacking, or glitch abuse. This is non-negotiable and applies to all ranks, including purchased ones.
+                        Drip Cafe operates with a <b>zero-tolerance policy</b> towards any form of exploitation, hacking, or glitch abuse. This is non-negotiable and applies to all ranks, including purchased ones.
                     </p>
                     <ul class="rules-list text-red-600 font-medium mt-3">
-                        <li style="list-style: none;">**Result:** Any confirmed exploitation will result in an **immediate and permanent ban** from the game and a removal from the group. Appeals are rarely considered.</li>
+                        <li style="list-style: none;"><b>Result:</b> Any confirmed exploitation will result in an <b>immediate and permanent ban</b> from the game and a removal from the group. Appeals are rarely considered.</li>
                     </ul>
                 </div>
             </section>
@@ -240,7 +274,7 @@
             <section class="space-y-4">
                 <h2 class="text-3xl font-bold text-accent border-b-2 border-accent pb-2 text-3d-dark">The Drip Cafe Rank Hierarchy</h2>
                 <p class="text-gray-700 leading-relaxed mb-6">
-                    Our comprehensive ranking structure ensures a **clear chain of command**, from the highest authority to the newest Trainees, providing a **rewarding career path** for all dedicated staff.
+                    Our comprehensive ranking structure ensures a <b>clear chain of command</b>, from the highest authority to the newest Trainees, providing a <b>rewarding career path</b> for all dedicated staff.
                 </p>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -250,11 +284,11 @@
                         <!-- All text explicitly dark brown (text-primary) -->
                         <h3 class="font-bold text-2xl mb-2 text-primary text-3d-dark">👑 Ownership</h3>
                         <p class="text-sm italic text-primary/80">Founders and Ultimate Authority</p>
-                        <p class="text-xs mt-2 font-semibold text-primary/90">**Ranks:** Chairman, Vice Chairwoman</p>
+                        <p class="text-xs mt-2 font-semibold text-primary/90"><b>Ranks:</b> Chairman, Vice Chairwoman</p>
                         <ul class="text-sm mt-1 list-disc list-inside space-y-1 text-primary/90">
-                            <li>The **Founders** and ultimate source of **authority**.</li>
-                            <li>Responsible for setting the organizational **vision** and **structure**.</li>
-                            <li>Hold the **ultimate decision-making power** over the entire establishment.</li>
+                            <li>The <b>Founders</b> and ultimate source of <b>authority</b>.</li>
+                            <li>Responsible for setting the organizational <b>vision</b> and <b>structure</b>.</li>
+                            <li>Hold the <b>ultimate decision making power</b> over the entire establishment.</li>
                         </ul>
                     </div>
 
@@ -263,11 +297,11 @@
                         <!-- Text is dark brown (text-primary) -->
                         <h3 class="font-bold text-xl mb-2 text-primary text-3d-dark">⭐ Presidential (Super Executives)</h3>
                         <p class="text-sm italic text-primary/80">Top Executive Leadership, Strategy, and Technical Direction</p>
-                        <p class="text-xs mt-2 font-semibold text-primary/90">**Ranks:** President, Vice President, Developer</p>
+                        <p class="text-xs mt-2 font-semibold text-primary/90"><b>Ranks:</b> President, Vice President, Developer</p>
                         <ul class="text-sm mt-1 list-disc list-inside space-y-1 text-primary/90">
-                            <li>**President:** Sets the **macro-level strategy** and long-term goals; acts as the primary executive under Ownership.</li>
-                            <li>**Vice President:** Manages the **execution of strategic plans**; oversees major operational departments.</li>
-                            <li>**Developer:** Holds the **critical technical authority**, ensuring smooth functionality, security, and innovation of the core game platform.</li>
+                            <li><b>President:</b> Sets the <b>macro level strategy</b> and long term goals; acts as the primary executive under Ownership.</li>
+                            <li><b>Vice President:</b> Manages the <b>execution of strategic plans</b>; oversees major operational departments.</li>
+                            <li><b>Developer:</b> Holds the <b>critical technical authority</b>, ensuring smooth functionality, security, and innovation of the core game platform.</li>
                         </ul>
                     </div>
 
@@ -276,11 +310,11 @@
                         <h3 class="font-bold text-xl mb-2 text-primary text-3d-dark">🔥 Leadership</h3>
                         <p class="text-sm italic text-primary/80">Directors and Senior Oversight</p>
                         <!-- Added Executive to the rank list -->
-                        <p class="text-xs mt-2 font-semibold text-primary/90">**Ranks:** Executive, Director, Associate Director</p>
+                        <p class="text-xs mt-2 font-semibold text-primary/90"><b>Ranks:</b> Executive, Director, Associate Director</p>
                         <ul class="text-sm mt-1 list-disc list-inside space-y-1 text-primary/90">
-                            <li>Provides **high-level departmental oversight**.</li>
-                            <li>Focuses on **policy development** and high-level strategy implementation.</li>
-                            <li>Translates **executive strategy** into tangible goals for the HR management teams.</li>
+                            <li>Provides <b>high-level departmental oversight</b>.</li>
+                            <li>Focuses on <b>policy development</b> and high level strategy implementation.</li>
+                            <li>Translates <b>executive strategy</b> into tangible goals for the HR management teams.</li>
                         </ul>
                     </div>
 
@@ -288,12 +322,12 @@
                     <div class="p-4 bg-gradient-to-br from-primary/20 to-primary/5 rounded-xl border-t-4 border-primary rank-card-3d col-span-full">
                         <h3 class="font-bold text-xl mb-2 text-primary text-3d-dark">💼 HR (High Ranks)</h3>
                         <p class="text-sm italic text-gray-600">Administrative, Departmental, and Senior Support Managers</p>
-                        <p class="text-xs mt-2 text-gray-700 font-semibold">**Ranks:** Chief of Staff, Corporate Officer, General Manager, Staffing Manager, Server Moderator Lead, Support Lead</p>
+                        <p class="text-xs mt-2 text-gray-700 font-semibold"><b>Ranks:</b> Chief of Staff, Corporate Officer, General Manager, Staffing Manager, Server Moderator Lead, Support Lead</p>
                         <ul class="text-sm mt-1 list-disc list-inside space-y-1 text-gray-600">
-                            <li>The **core administrative team**.</li>
+                            <li>The <b>core administrative team</b>.</li>
                             <li>Manages specialized departments (Operations, HR, PR, SM, ST).</li>
-                            <li>Handles **staff policy**, auditing, and maintaining **server discipline**.</li>
-                            <li>Responsible for **managerial training and strategic execution**.</li>
+                            <li>Handles <b>staff policy</b>, auditing, and maintaining <b>server discipline</b>.</li>
+                            <li>Responsible for <b>managerial training and strategic execution</b>.</li>
                         </ul>
                     </div>
 
@@ -301,12 +335,12 @@
                     <div class="p-4 bg-gradient-to-br from-secondary/50 to-white rounded-xl border-l-4 border-accent rank-card-3d col-span-2">
                         <h3 class="font-bold text-xl mb-2 text-primary text-3d-dark">🧑‍💻 MR (Middle Ranks)</h3>
                         <p class="text-sm italic text-gray-600">Supervision, Shift Leads, and Specialized Agents</p>
-                        <p class="text-xs mt-2 text-gray-700 font-semibold">**Ranks:** Café Manager, Manager, Assistant Manager, Supervisor, Team Leader, Server Moderator, Support Agent</p>
+                        <p class="text-xs mt-2 text-gray-700 font-semibold"><b>Ranks:</b> Café Manager, Manager, Assistant Manager, Supervisor, Team Leader, Server Moderator, Support Agent</p>
                         <ul class="text-sm mt-1 list-disc list-inside space-y-1 text-gray-600">
-                            <li>The **shift management team**.</li>
-                            <li>Oversees **daily cafe operations** and **trains LRs**.</li>
-                            <li>Manages **customer conflicts** and minor staff issues.</li>
-                            <li>Performs primary **Server Moderation and Support** duties.</li>
+                            <li>The <b>shift management team</b>.</li>
+                            <li>Oversees <b>daily cafe operations</b> and <b>trains LRs</b>.</li>
+                            <li>Manages <b>customer conflicts</b> and minor staff issues.</li>
+                            <li>Performs primary <b>Server Moderation and Support</b> duties.</li>
                         </ul>
                     </div>
 
@@ -314,12 +348,12 @@
                     <div class="p-4 bg-gradient-to-br from-white to-secondary/30 rounded-xl border-r-4 border-primary rank-card-3d col-span-2">
                         <h3 class="font-bold text-xl mb-2 text-primary text-3d-dark">☕ LR (Low Ranks)</h3>
                         <p class="text-sm italic text-gray-600">Customer Service and Baristas</p>
-                        <p class="text-xs mt-2 text-gray-700 font-semibold">**Ranks:** Head Barista, Senior Barista, Barista, Cashier, Trainee</p>
+                        <p class="text-xs mt-2 text-gray-700 font-semibold"><b>Ranks:</b> Head Barista, Senior Barista, Barista, Cashier, Trainee</p>
                         <ul class="text-sm mt-1 list-disc list-inside space-y-1 text-gray-600">
-                            <li>The **customer-facing service team**.</li>
-                            <li>Responsible for **order accuracy** and **food/drink preparation**.</li>
-                            <li>Key in maintaining a **welcoming and positive atmosphere**.</li>
-                            <li>Includes the entry-level **Trainee** rank.</li>
+                            <li>The <b>customer-facing service team</b>.</li>
+                            <li>Responsible for <b>order accuracy</b> and <b>food/drink preparation</b>.</li>
+                            <li>Key in maintaining a <b>welcoming and positive atmosphere</b>.</li>
+                            <li>Includes the entry level <b>Trainee</b> rank.</li>
                         </ul>
                     </div>
                 </div>
@@ -329,7 +363,7 @@
             <section class="space-y-4 bg-white p-6 rounded-xl border-t-8 border-accent shadow-lg">
                 <h2 class="text-3xl font-bold text-accent pb-2 text-3d-dark">Special Perks and Exclusive Items</h2>
                 <p class="text-gray-700 leading-relaxed">
-                    The Drip Cafe Shop offers special items that provide unique in-game cosmetics and perks. These items **do not grant any administrative rank or authority** within the organization.
+                    The Drip Cafe Shop offers special items that provide unique in-game cosmetics and perks. These items <b>do not grant any administrative rank or authority</b> within the organization.
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -365,14 +399,14 @@
                         <div class="bg-white p-4 rounded-lg border-l-4 border-accent shadow-sm">
                             <h3 class="font-bold text-lg text-accent mb-1">🎮 In-Game Assistance</h3>
                             <p class="text-sm text-gray-600">
-                                If you are experiencing issues **inside the Roblox game** (e.g., an exploiter, a glitch, or a rude player), please use the in-game **Report Button** or directly message any visible High Rank (HR) or Executive staff member.
+                                If you are experiencing issues <b>inside the Roblox game</b> (e.g., an exploiter, a glitch, or a rude player), please use the in-game <b>Report Button</b> or directly message any visible High Rank (HR) or Executive staff member.
                             </p>
                         </div>
                         <!-- Discord Ticketing -->
                         <div class="bg-white p-4 rounded-lg border-l-4 border-primary shadow-sm">
                             <h3 class="font-bold text-lg text-primary mb-1">💬 Discord Ticket Support</h3>
                             <p class="text-sm text-gray-600">
-                                For **appeals, rank errors, general questions, or policy clarification**, join our Discord and open a ticket in the **#support** or **#ticket-channel**. This ensures a clear, private record and prompt response from our HR team.
+                                For <b>appeals, rank errors, general questions, or policy clarification</b>, join our Discord and open a ticket in the <b>#support</b>. This ensures a clear, private record and prompt response from our HR team.
                             </p>
                         </div>
                     </div>
@@ -387,37 +421,87 @@
                 <div class="bg-primary/10 p-5 rounded-xl border-l-8 border-accent">
                     <h3 class="text-2xl font-semibold mb-2 text-primary text-3d-dark">Future Trainees: Your Journey Awaits!</h3>
                     <p class="text-gray-700">
-                        We are thrilled to welcome new **Trainees**! This is the **first step** toward a seriously rewarding role in our community. We look for individuals who are ready to learn, dedicated to our guidelines, and eager to grow.
+                        We are thrilled to welcome new <b>Trainees</b>! This is the <b>first step</b> toward a seriously rewarding role in our community. We look for individuals who are ready to learn, dedicated to our guidelines, and eager to grow.
                     </p>
-                </div>
-
-                <!-- Call to Action -->
-                <div class="bg-primary text-white p-5 rounded-xl text-center shadow-xl border-b-8 border-accent">
-                    <p class="text-xl font-bold mb-3 text-3d-dark">Ready to Apply or Connect?</p>
-                    <p class="mb-4">
-                        To **stay up-to-date**, **apply for a rank**, or take the quiz, make sure you are in our **official Discord channel**. All major updates and the application center links are posted there!
-                    </p>
-                    <a href="https://discord.gg/fQf3S3ATCX" target="_blank" class="inline-block bg-accent text-primary font-bold py-3 px-8 rounded-full hover:bg-accent/80 transition duration-300 shadow-md">
-                        Join Our Discord & Quiz Center
-                    </a>
                 </div>
             </section>
+
+            <!-- NEW: Discord and Roblox Section -->
+            <section class="space-y-6">
+                <h2 class="text-3xl font-bold text-primary border-b-2 border-primary pb-2 text-3d-dark">Join Our Community</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Discord Section -->
+                    <div class="bg-primary/5 p-6 rounded-xl border-l-8 border-accent shadow-lg text-center">
+                        <h3 class="text-2xl font-semibold mb-3 text-primary text-3d-dark">☕ Join our Discord!</h3>
+                        <p class="text-gray-700 mb-4">
+                            Stay up-to-date, apply for roles, and connect with the whole community.
+                        </p>
+                        <a href="https://discord.gg/fQf3S3ATCX" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent text-primary font-bold py-3 px-8 rounded-full hover:bg-accent/80 transition duration-300 shadow-md transform hover:scale-105">
+                            Join Now
+                        </a>
+                    </div>
+
+                    <!-- Roblox Group Section -->
+                    <div class="bg-primary/5 p-6 rounded-xl border-r-8 border-primary shadow-lg text-center">
+                        <h3 class="text-2xl font-semibold mb-3 text-primary text-3d-dark">🌐 Join our Roblox Group!</h3>
+                        <p class="text-gray-700 mb-4">
+                            Become an official member of the Drip Caffe group on Roblox to get started.
+                        </p>
+                        <a href="https://www.roblox.com/communities/16285628/Drip-Caffe#!/about" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary text-secondary font-bold py-3 px-8 rounded-full hover:bg-primary/80 transition duration-300 shadow-md transform hover:scale-105">
+                            View Group
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+
         </main>
 
         <!-- Footer -->
         <footer class="bg-primary/90 p-4 text-center text-secondary text-sm">
-            &copy; 2025 Drip Cafe. Dedicated to Smooth Operations and Exceptional Experiences.
+            &copy; 2025 Drip Cafe | All Rights Reserved.
         </footer>
 
     </div>
 
-    <!-- Script for the non-functional anchor links to prevent errors in the sandbox -->
+    <!-- Back to Top Button HTML -->
+    <button onclick="scrollToTop()" id="toTopBtn" title="Go to top">
+        <!-- Up Arrow -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <!-- Script for the non-functional anchor links and Back to Top button -->
     <script>
+        // Prevent sandbox errors
         document.querySelectorAll('a[href="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
             });
         });
+
+        // --- Back to Top Button Logic ---
+        const toTopBtn = document.getElementById("toTopBtn");
+
+        // When the user scrolls down 200px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                toTopBtn.classList.add("show");
+            } else {
+                toTopBtn.classList.remove("show");
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     </script>
 
 </body>
